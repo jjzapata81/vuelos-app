@@ -1,0 +1,16 @@
+.price-options{
+  display: flex;
+  flex-direction: column;
+}
+
+.plain-type{
+  background: #f3f2f6;
+  padding:10px 15px;
+  color:#11837c;
+  font-size: 13px;
+}
+
+.flight-card-container{
+  display: flex;
+  justify-content:space-around;
+}

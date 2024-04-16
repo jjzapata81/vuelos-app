@@ -1,0 +1,17 @@
+.location-time{
+  display:flex;
+  justify-content: space-between;
+}
+
+.flight-time{
+  font-size: 26px;
+  color: #1b0088;
+  margin: 0px 10px
+}
+
+.flight-location{
+  font-size: 26px;
+  color:#8f8f8f;
+  text-transform: uppercase;
+  margin: 0px 10px
+}

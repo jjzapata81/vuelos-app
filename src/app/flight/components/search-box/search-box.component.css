@@ -1,0 +1,40 @@
+.search-box{
+  background: #fff;
+  width: 80%;
+  max-width: 1000px;
+  margin:0 auto;
+  padding:15px;
+  border-radius: 10px;
+}
+
+label{
+  padding:10px;
+  color:#676767;
+  margin:5px;
+}
+
+select, input{
+  padding:10px;
+  color:#676767;
+  border-radius: 5px;
+  margin:5px;
+  border-style: solid;
+  border-color:#d8d8d8;
+  border-width: 1px;
+  outline: none;
+}
+
+.primary{
+  background: #11837c;
+  padding:10px;
+  color:#fff;
+  border-style: solid;
+  border-color:#11837c;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.primary:hover{
+  background:#0e736e;
+  border-color:#0e736e;
+}

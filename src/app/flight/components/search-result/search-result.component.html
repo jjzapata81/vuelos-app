@@ -1,0 +1,32 @@
+<section>
+  <section class="search-result" *ngFor="let item of searchResults">
+    <div clas="promo-section" *ngIf="item.isLowerPrice">
+      <span class="promo-label">Más económico</span>
+    </div>
+    <div class="flight-info">
+      <div class="flight-details">
+        <location-time [info]="item.from"/>
+        <div class="duration-info">
+          <div>Duración</div>
+          <div>{{ item.duration }}</div>
+        </div>
+        <location-time [info]="item.to"/>
+      </div>
+     <div class="flight-price">
+        <div>Adulto desde</div>
+        <div class="price">{{ item.basePrice }}</div>
+      </div>
+    </div>
+    <div class="flight-route">
+      <a [href]="item.route.detail">{{ item.route.name }}</a>
+    </div>
+    <price-options />
+  </section>
+</section>
+
+
+
+
+<!-- <div class="flight-price close-price-options">
+        Cerrar
+      </div>-->
