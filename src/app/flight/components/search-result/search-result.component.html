@@ -12,21 +12,22 @@
         </div>
         <location-time [info]="item.to"/>
       </div>
-     <div class="flight-price">
+     <div class="flight-price" (click)="onPriceOptions(item.id)" *ngIf="selected!==item.id">
         <div>Adulto desde</div>
         <div class="price">{{ item.basePrice }}</div>
+      </div>
+      <div class="flight-price close-price-options" (click)="onPriceOptions('')" *ngIf="selected===item.id">
+        Cerrar
       </div>
     </div>
     <div class="flight-route">
       <a [href]="item.route.detail">{{ item.route.name }}</a>
     </div>
-    <price-options />
+    <price-options [options]="item.priceDetail" *ngIf="selected===item.id"/>
   </section>
 </section>
 
 
 
 
-<!-- <div class="flight-price close-price-options">
-        Cerrar
-      </div>-->
+

@@ -1,8 +1,6 @@
 <div class="price-options">
-  <div class="plain-type">Airbus A320</div>
+  <div class="plain-type">{{ options.plainType }}</div>
   <div class="flight-card-container">
-    <price-option />
-    <price-option />
-    <price-option />
+    <price-option *ngFor="let item of options.priceOptions" [optionDetail]="item"/>
   </div>
 </div>

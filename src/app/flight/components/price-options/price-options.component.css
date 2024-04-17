@@ -1,3 +1,7 @@
+price-option{
+  width: 33.33%;
+}
+
 .price-options{
   display: flex;
   flex-direction: column;

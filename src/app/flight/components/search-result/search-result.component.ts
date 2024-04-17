@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FlightInfo } from '../../interfaces/flight-info.interface';
+import { FlightService } from '../../services/flight.service';
 
 @Component({
   selector: 'search-result',
@@ -8,24 +9,18 @@ import { FlightInfo } from '../../interfaces/flight-info.interface';
 })
 export class SearchResultComponent {
 
-  searchResults: FlightInfo[] = [
-    {
-      isLowerPrice:true,
-      duration: '0 h 55 min',
-      basePrice: 'COP 90.806,00',
-      from: {
-        time: '2:50 pm',
-        location: 'med'
-      },
-      to:{
-        time:'3:45 pm',
-        location: 'bog'
-      },
-      route:{
-        name:'Directo',
-        detail:'#'
-      }
-    }
-  ]
+  selected:string = '';
+  searchResults: FlightInfo[] = [];
+
+  constructor(private service:FlightService){
+
+    this.searchResults = service.getResults();
+
+  }
+
+  onPriceOptions(option: string):void{
+    console.log(option);
+    this.selected = option;
+  }
 
 }

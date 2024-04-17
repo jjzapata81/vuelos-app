@@ -1,15 +1,13 @@
 <div class="flight-card">
   <div class="flight-card-body">
-    <div class="flight-card-title">Basic</div>
+    <div class="flight-card-title">{{ optionDetail.name }}</div>
     <ul>
-      <li>Bolso o mochila pequeña</li>
-      <li>Cambio con cargo</li>
-      <li>No aplican beneficios por categorías de socios</li>
+      <li *ngFor="let item of optionDetail.features">{{ item }}</li>
     </ul>
   </div>
   <div class="flight-card-footer">
-    <div>COP 90.806,00</div>
-    <a href="#">Más detalles</a>
-    <button>Elegir</button>
+    <div>{{ optionDetail.price }}</div>
+    <a [href]="optionDetail.moreDetails">Más detalles</a>
+    <button (click)="selectPrice(optionDetail.action)">Elegir</button>
   </div>
 </div>
