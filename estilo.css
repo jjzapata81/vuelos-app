@@ -1,0 +1,34 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: "Trebuchet MS", sans-serif;
+  background: #e8e8e8;
+}
+
+.menu{
+  list-style: none;
+  padding: 0;
+  background: #10004f;
+  width: 100%;
+  margin: 0px 0px 20px;
+}
+
+.menu li{
+  display: inline-block;
+  text-align: center;
+}
+
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 20px;
+}
+
+
+.menu li a:hover{
+  background: rgba(255,255,255, 0.2);
+}
