@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class SearchBoxComponent {
 
+  search(value:string){
+    console.log(value);
+    value='';
+  }
+
 }

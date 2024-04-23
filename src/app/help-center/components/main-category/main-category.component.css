@@ -1,0 +1,18 @@
+.container{
+  color: #10004f;
+  width: 100%;
+}
+
+.container > div {
+  padding: 50px;
+}
+
+.title{
+  font-size: 33px;
+  line-height: 40px;
+}
+
+.card-items{
+  display: flex;
+  justify-content: center;
+}

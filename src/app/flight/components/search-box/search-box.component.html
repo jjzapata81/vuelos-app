@@ -12,12 +12,12 @@
     <input type="number" id="passengersNumber" name="passengersNumber" />
   </section>
   <section>
-    <input type="text" placeholder="Origen" />
+    <input type="text" placeholder="Origen" #txtFrom/>
     <input type="text" placeholder="Destino" />
     <label for="travelDate"> Ida </label>
     <input type="date" id="travelDate" />
     <label for="returnDate"> Regreso </label>
     <input type="date" id="returnDate" />
-    <button class="primary">Buscar</button>
+    <button class="primary" (click)="search(txtFrom.value)">Buscar</button>
   </section>
 </div>

@@ -9,10 +9,10 @@ import { Menu } from '../interfaces/menu.interface';
 export class MenuComponent {
 
   menuItems: Menu[] = [
-    { name:'Logo (inicio)', url: '#' },
+    { name:'Logo (inicio)', url: '/' },
     { name:'Ofertas y destinos', url: '#' },
     { name:'Mis reservas', url: '#' },
-    { name:'Centro de ayuda', url: '#' },
+    { name:'Centro de ayuda', url: 'help' },
     { name:'Iniciar sesión', url: '#' }
   ]
 

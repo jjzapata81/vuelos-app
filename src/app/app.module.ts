@@ -10,6 +10,7 @@ import { SearchResultComponent } from './flight/components/search-result/search-
 import { PriceOptionComponent } from './flight/components/price-option/price-option.component';
 import { PriceOptionsComponent } from './flight/components/price-options/price-options.component';
 import { LocationTimeComponent } from './flight/controls/location-time/location-time.component';
+import { HelpModule } from './help-center/help.module';
 
 @NgModule({
   declarations: [
@@ -20,11 +21,13 @@ import { LocationTimeComponent } from './flight/controls/location-time/location-
     SearchResultComponent,
     PriceOptionComponent,
     PriceOptionsComponent,
-    LocationTimeComponent
+    LocationTimeComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HelpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
