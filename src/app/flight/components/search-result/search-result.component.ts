@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FlightInfo } from '../../interfaces/flight-info.interface';
-import { FlightService } from '../../services/flight.service';
 
 @Component({
   selector: 'search-result',
@@ -10,13 +9,9 @@ import { FlightService } from '../../services/flight.service';
 export class SearchResultComponent {
 
   selected:string = '';
+
+  @Input()
   searchResults: FlightInfo[] = [];
-
-  constructor(private service:FlightService){
-
-    this.searchResults = service.getResults();
-
-  }
 
   onPriceOptions(option: string):void{
     console.log(option);
@@ -24,3 +19,4 @@ export class SearchResultComponent {
   }
 
 }
+

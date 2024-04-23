@@ -12,6 +12,6 @@
 .flight-location{
   font-size: 26px;
   color:#8f8f8f;
-  text-transform: uppercase;
+  /**text-transform: uppercase;**/
   margin: 0px 10px
 }

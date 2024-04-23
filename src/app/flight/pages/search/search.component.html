@@ -1,5 +1,4 @@
-
 <main>
-  <search-box />
-  <search-result />
+  <search-box (searchEmmiter)="onSearchFlights($event)"/>
+  <search-result [searchResults]="results"/>
 </main>

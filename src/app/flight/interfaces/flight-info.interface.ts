@@ -5,7 +5,7 @@ export interface FlightInfo{
   id:string,
   isLowerPrice:boolean,
   duration:string,
-  basePrice:string,
+  basePrice:number,
   from: LocationTime,
   to: LocationTime,
   route: FlightRoute

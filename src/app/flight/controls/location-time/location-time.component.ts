@@ -1,4 +1,4 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { LocationTime } from '../../interfaces/location-time.interface';
 
 @Component({
@@ -6,7 +6,7 @@ import { LocationTime } from '../../interfaces/location-time.interface';
   template: `
     <div class="location-time">
       <div class="flight-time">{{info.time }}</div>
-      <div class="flight-location">{{ info.location }}</div>
+      <div class="flight-location">{{ info.location | uppercase | slice:0:3}}</div>
     </div>
   `,
   styleUrl: './location-time.component.css'

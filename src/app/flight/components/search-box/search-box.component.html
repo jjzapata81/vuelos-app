@@ -1,23 +1,49 @@
-<div class="search-box">
+<!--<div class="search-box">
   <section class="search-options" name="roundOption">
-    <select>
+    <select  [(ngModel)]="searchCriteria.roundType" (change)="onRoundType()">
       <option>Ida y vuelta</option>
-      <option>Ida y vuelta</option>
+      <option>Solo ida</option>
     </select>
-    <select>
+    <select  [(ngModel)]="searchCriteria.type">
       <option>Económica</option>
       <option>Premium</option>
     </select>
     <label for="passengersNumber">Cantidad de pasajeros</label>
-    <input type="number" id="passengersNumber" name="passengersNumber" />
+    <input type="number" id="passengersNumber" name="passengersNumber"
+      [(ngModel)]="searchCriteria.passengersNumber"/>
   </section>
   <section>
-    <input type="text" placeholder="Origen" #txtFrom/>
-    <input type="text" placeholder="Destino" />
+    <input type="text" placeholder="Origen" [(ngModel)]="searchCriteria.from"/>
+    <input type="text" placeholder="Destino" [(ngModel)]="searchCriteria.to" />
     <label for="travelDate"> Ida </label>
-    <input type="date" id="travelDate" />
-    <label for="returnDate"> Regreso </label>
-    <input type="date" id="returnDate" />
-    <button class="primary" (click)="search(txtFrom.value)">Buscar</button>
+    <input type="date" id="travelDate"  [(ngModel)]="searchCriteria.travelDate"/>
+    <label for="returnDate" *ngIf="isRoundTrip"> Regreso </label>
+    <input type="date" id="returnDate"  [(ngModel)]="searchCriteria.returnDate"  *ngIf="isRoundTrip"/>
+    <button class="primary" (click)="onSearch()" >Buscar</button>
   </section>
+</div>-->
+<div class="search-box">
+  <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+    <section class="search-options" name="roundOption">
+      <select (change)="onRoundType()" formControlName="roundType">
+        <option>Ida y vuelta</option>
+        <option>Solo ida</option>
+      </select>
+      <select formControlName="type">
+        <option>Económica</option>
+        <option>Premium</option>
+      </select>
+      <label for="passengersNumber">Cantidad de pasajeros</label>
+      <input type="number" id="passengersNumber" name="passengersNumber" formControlName="passengersNumber">
+    </section>
+    <section>
+      <input type="text" placeholder="Origen" formControlName="from"/>
+      <input type="text" placeholder="Destino" formControlName="to"/>
+      <label for="travelDate"> Ida </label>
+      <input type="date" id="travelDate" formControlName="travelDate"/>
+      <label for="returnDate" *ngIf="isRoundTrip"> Regreso </label>
+      <input type="date" id="returnDate" *ngIf="isRoundTrip" formControlName="returnDate"/>
+      <button class="primary" type="submit" >Buscar</button>
+    </section>
+  </form>
 </div>

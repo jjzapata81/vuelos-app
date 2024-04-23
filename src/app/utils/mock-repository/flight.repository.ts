@@ -5,14 +5,14 @@ export const searchFlightResults: FlightInfo[] = [
     id:'1',
     isLowerPrice:true,
     duration: '0 h 55 min',
-    basePrice: 'COP 90.806,00',
+    basePrice: 90806.00,
     from: {
       time: '2:50 pm',
-      location: 'med'
+      location: 'medellin'
     },
     to:{
       time:'3:45 pm',
-      location: 'bog'
+      location: 'bogota'
     },
     route:{
       name:'Directo',

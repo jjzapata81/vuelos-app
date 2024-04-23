@@ -11,6 +11,7 @@ import { PriceOptionComponent } from './flight/components/price-option/price-opt
 import { PriceOptionsComponent } from './flight/components/price-options/price-options.component';
 import { LocationTimeComponent } from './flight/controls/location-time/location-time.component';
 import { HelpModule } from './help-center/help.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,8 @@ import { HelpModule } from './help-center/help.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     HelpModule
   ],
   providers: [],
