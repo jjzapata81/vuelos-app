@@ -1,8 +1,17 @@
+header{
+  display: flex;
+  background: #10004f;
+  color: #fff;
+}
+
+ul{
+  list-style: none;
+}
+
 .menu{
   list-style: none;
   padding: 0;
-  background: #10004f;
-  width: 100%;
+  width: 70%;
 
 }
 
@@ -16,9 +25,28 @@
   text-decoration: none;
   display: block;
   padding: 20px;
+  cursor: pointer;
 }
-
 
 .menu li a:hover{
   background: rgba(255,255,255, 0.2);
+}
+
+.user-info, .user-info div{
+  list-style: none;
+  padding:0px;
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+  cursor: pointer;
+  width: 30%;
+}
+
+.user-info div{
+  width: 100%;
+}
+
+.photo{
+  width: 50px;
+  border-radius: 25px;
 }

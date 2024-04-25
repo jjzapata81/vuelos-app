@@ -6,4 +6,18 @@
       </li>
     </ul>
   </div>
+  <div class="user-info">
+      <div *ngIf="!(auth.isAuthenticated$ | async)">
+        <a (click)="auth.loginWithPopup()">Iniciar sesión</a>
+      </div>
+      <div *ngIf="auth.isAuthenticated$ | async">
+        <div>
+          <a (click)="auth.logout()">Cerrar sesión</a>
+        </div>
+        <div>{{user.name}}</div>
+        <div>
+          <img class="photo" [src]="user.photo">
+        </div>
+      </div>
+  </div>
 </header>
