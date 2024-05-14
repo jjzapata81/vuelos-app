@@ -1,7 +1,7 @@
 <header>
   <div class="menu">
     <ul>
-      <li *ngFor="let item of menuItems">
+      <li *ngFor="let item of menuItems()">
         <a [routerLink]="item.url">{{ item.name }}</a>
       </li>
     </ul>

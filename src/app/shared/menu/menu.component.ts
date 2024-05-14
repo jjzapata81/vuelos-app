@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { Menu } from '../interfaces/menu.interface';
 import { AuthService } from '@auth0/auth0-angular';
 
@@ -16,20 +16,18 @@ export class MenuComponent {
 
   constructor(public auth: AuthService){
 
-
     auth.user$.subscribe(u => {
       this.user.name = u?.name||'';
       this.user.photo = u?.picture||'';
-      console.log(u?.sub);
     })
 
   }
 
-  menuItems: Menu[] = [
+  menuItems = signal<Menu[]>([
     { name:'Logo (inicio)', url: '/' },
     { name:'Ofertas y destinos', url: '#' },
     { name:'Mis reservas', url: 'bookings' },
     { name:'Centro de ayuda', url: 'help' }
-  ]
+  ])
 
 }
