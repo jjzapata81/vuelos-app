@@ -19,7 +19,7 @@ export class SupabaseService {
   async upload(file:any, folderName:string = 'base'){
     const { error } = await this.supabase
       .storage
-      .from('my-pics')
+      .from('pqrs')
       .upload(`${folderName}/${file.name}`, file);
     if(error){
       alert(error.message);
