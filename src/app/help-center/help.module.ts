@@ -7,6 +7,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { MainCategoryComponent } from './components/main-category/main-category.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { MainCategoryCardComponent } from './controls/main-category-card/main-category-card.component';
+import { PqrComponent } from './components/pqr/pqr.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,11 +19,13 @@ import { MainCategoryCardComponent } from './controls/main-category-card/main-ca
     BannerComponent,
     MainCategoryComponent,
     MainCategoryCardComponent,
-    ChatComponent
+    ChatComponent,
+    PqrComponent
   ],
   imports: [
     CommonModule,
-    HelpRoutingModule
+    HelpRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class HelpModule { }
