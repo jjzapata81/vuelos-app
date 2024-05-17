@@ -28,7 +28,7 @@ export class SupabaseService {
 
     const { data } = await this.supabase
       .storage
-      .from('my-pics')
+      .from('pqrs')
       .getPublicUrl(`${folderName}/${file.name}`)
     return data.publicUrl;
   }
