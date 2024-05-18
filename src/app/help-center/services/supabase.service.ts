@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { SupabaseClient, createClient } from '@supabase/supabase-js';
-import { environment } from './../../../environments/environment';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +8,6 @@ import { environment } from './../../../environments/environment';
 export class SupabaseService {
 
   private supabase: SupabaseClient;
-
   constructor() {
     this.supabase = createClient(
       environment.supabase.url,
@@ -16,7 +15,7 @@ export class SupabaseService {
     );
   }
 
-  async upload(file:any, folderName:string = 'base'){
+  async upload(file:File, folderName:string = 'base'){
     const { error } = await this.supabase
       .storage
       .from('pqrs')

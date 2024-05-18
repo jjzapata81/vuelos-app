@@ -35,16 +35,13 @@
   color: white;
   background-color: #11837c;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .inputfile:focus + label,
 .inputfile + label:hover {
   background:#0e736e;
   border-color:#0e736e;
-}
-
-.inputfile + label {
-	cursor: pointer;
 }
 
 label{
