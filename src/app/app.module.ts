@@ -12,6 +12,8 @@ import { PriceOptionsComponent } from './flight/components/price-options/price-o
 import { LocationTimeComponent } from './flight/controls/location-time/location-time.component';
 import { HelpModule } from './help-center/help.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/components/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PriceOptionComponent,
     PriceOptionsComponent,
     LocationTimeComponent,
+    LoginComponent,
 
   ],
   imports: [
@@ -30,7 +33,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HelpModule
+    HelpModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

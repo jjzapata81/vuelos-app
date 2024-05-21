@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="title">Iniciar sesión</div>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="user@flights.com" formControlName="email"/>
+    <label for="password">Password</label>
+    <input type="password" id="password" formControlName="password"/>
+    <button type="submit">Iniciar sesión</button>
+  </form>
+</div>

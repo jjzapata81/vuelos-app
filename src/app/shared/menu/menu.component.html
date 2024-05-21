@@ -4,6 +4,16 @@
       <li *ngFor="let item of menuItems">
         <a [routerLink]="item.url">{{ item.name }}</a>
       </li>
+      <li>
+        @if (!user()) {
+          <a routerLink="/login">Iniciar sesión</a>
+        }@else{
+          <a routerLink="/login">Cerrar sesión</a>
+        }
+      </li>
+      @if(user()){
+        <li> <a href="#"> {{user()?.name}} ({{user()?.email}})</a></li>
+      }
     </ul>
   </div>
 </header>
