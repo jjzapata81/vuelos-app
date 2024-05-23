@@ -12,9 +12,11 @@ export const priceDetail:PriceDetail = {
             'Cambio con cargo',
             'No aplican beneficios por categorías de socios'
           ],
-          price: 'COP 90.806,00',
+          price: 90806.00,
           moreDetails: '#',
-          action: 'BASIC_ACTION'
+          action: 'BASIC_ACTION',
+          flightid: 0,
+          rate:1
         },
         {
           name: 'Light',
@@ -24,9 +26,11 @@ export const priceDetail:PriceDetail = {
             'Cambio con cargo',
             'Postulación a UPG con tramos'
           ],
-          price: 'COP 110.735,00',
+          price: 90806.00,
           moreDetails: '#',
-          action: 'LIGHT_ACTION'
+          action: 'LIGHT_ACTION',
+          flightid: 0,
+          rate:1.1
         },
         {
           name: 'Full',
@@ -39,9 +43,11 @@ export const priceDetail:PriceDetail = {
             'Devolución total',
             'Postulación a UPG con tramos'
           ],
-          price: 'COP 130.706,00',
+          price: 90806.00,
           moreDetails: '#',
-          action: 'FULL_ACTION'
+          action: 'FULL_ACTION',
+          flightid: 0,
+          rate:1.2
         }
 
       ]

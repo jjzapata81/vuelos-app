@@ -14,7 +14,6 @@ export class SearchResultComponent {
   searchResults: FlightInfo[] = [];
 
   onPriceOptions(option: number):void{
-    console.log(option);
     this.selected = option;
   }
 

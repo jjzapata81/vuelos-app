@@ -2,15 +2,3 @@
   <search-box (searchEmmiter)="onSearchFlights($event)"/>
   <search-result [searchResults]="results"/>
 </main>
-<footer>
-  <div>
-    <div class="plain-container">
-      @for (item of seats; track $index) {
-        <div class="seat" [class]="item.status==='available' ? '':'not-available'" (click)="onSelectSeat(item)">
-          <span>{{item.code}}</span>
-          <div></div>
-        </div>
-      }
-    </div>
-  </div>
-</footer>

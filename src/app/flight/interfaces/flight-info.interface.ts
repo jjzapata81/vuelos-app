@@ -12,6 +12,7 @@ export interface FlightInfo{
   priceDetail: PriceDetail;
   seats?: Seat[];
   tickets?:Ticket[];
+  priceType?:string;
 }
 
 interface FlightRoute{
@@ -35,6 +36,7 @@ export interface Ticket{
 
 export interface FlightResponse{
   id:number;
+  priceBase:number;
   arriveDate:string;
   arriveTime:string;
   departureDate:string;

@@ -23,7 +23,7 @@
     <div class="flight-route">
       <a [href]="item.route.detail">{{ item.route.name }}</a>
     </div>
-    <price-options [options]="item.priceDetail" *ngIf="selected===item.id"/>
+    <price-options [flightInfo]="item" *ngIf="selected===item.id"/>
   </section>
 </section>
 

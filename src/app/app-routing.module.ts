@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SearchComponent } from './flight/pages/search/search.component';
 import { LoginComponent } from './login/components/login.component';
+import { FlightComponent } from './flight/pages/flight/flight.component';
+import { isFlightGuard } from './login/guards/is-flight.guard';
 
 const routes: Routes = [
   {
@@ -11,6 +13,11 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path:'flight',
+    canActivate: [isFlightGuard],
+    component:FlightComponent
   },
   {
     path:'help',

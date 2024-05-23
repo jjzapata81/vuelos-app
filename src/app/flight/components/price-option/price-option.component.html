@@ -6,8 +6,8 @@
     </ul>
   </div>
   <div class="flight-card-footer">
-    <div>{{ optionDetail.price }}</div>
+    <div>{{ optionDetail.price | currency : 'COP ' }}</div>
     <a [href]="optionDetail.moreDetails">Más detalles</a>
-    <button (click)="selectPrice(optionDetail.action)">Elegir</button>
+    <button (click)="selectPrice(optionDetail.rate)">Elegir</button>
   </div>
 </div>

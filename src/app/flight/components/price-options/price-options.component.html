@@ -1,6 +1,6 @@
 <div class="price-options">
-  <div class="plain-type">{{ options.plainType }}</div>
+  <div class="plain-type">{{ flightInfo.priceDetail.plainType }}</div>
   <div class="flight-card-container">
-    <price-option *ngFor="let item of options.priceOptions" [optionDetail]="item"/>
+    <price-option *ngFor="let item of flightInfo.priceDetail.priceOptions" [optionDetail]="item" (actionEmmiter)="selectedOption($event)"/>
   </div>
 </div>

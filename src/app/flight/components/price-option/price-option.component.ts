@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { PriceOptions } from '../../interfaces/price-options.interface';
 
 @Component({
@@ -8,15 +8,20 @@ import { PriceOptions } from '../../interfaces/price-options.interface';
 })
 export class PriceOptionComponent {
 
+  @Output()
+  actionEmmiter = new EventEmitter<string>();
+
+
   @Input()
   optionDetail: PriceOptions = {
+    flightid:0,
     name:'',
     features:[],
-    price: '',
-    moreDetails:'', action:''
+    price: 0,
+    moreDetails:'', action:'', rate:0
   }
 
-  selectPrice(option:string):void{
-    console.log(option);
+  selectPrice(option:number):void{
+    this.actionEmmiter.emit(option+'');
   }
 }

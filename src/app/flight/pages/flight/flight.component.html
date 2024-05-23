@@ -1,0 +1,29 @@
+<div class="search-result">
+    <div clas="promo-section" *ngIf="flight()!.isLowerPrice">
+      <span class="promo-label">Más económico</span>
+    </div>
+    <div class="flight-info">
+      <div class="flight-details">
+        <location-time [info]="flight()!.from"/>
+        <div class="duration-info">
+          <div>Duración</div>
+          <div>{{ flight()!.duration }}</div>
+        </div>
+        <location-time [info]="flight()!.to"/>
+      </div>
+     <div class="flight-price">
+        <div>Precio</div>
+        <div class="price">{{ price()| currency : 'COP '}}</div>
+      </div>
+    </div>
+</div>
+<div>
+  <div class="plain-container">
+    @for (item of flight()!.seats; track $index) {
+      <div class="seat" [class]="item.state==='available' ? '':'not-available'" (click)="onSelectSeat(item)">
+        <span>{{item.code}}</span>
+        <div></div>
+      </div>
+    }
+  </div>
+</div>

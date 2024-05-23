@@ -14,6 +14,7 @@ import { HelpModule } from './help-center/help.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/components/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FlightComponent } from './flight/pages/flight/flight.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     PriceOptionsComponent,
     LocationTimeComponent,
     LoginComponent,
+    FlightComponent,
 
   ],
   imports: [
