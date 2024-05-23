@@ -1,6 +1,8 @@
 import { Component, computed, inject } from '@angular/core';
 import { FlightService } from '../../services/flight.service';
 import { Seat } from '../../interfaces/flight-info.interface';
+import { PurchaseRequest } from '../../interfaces/purchase-request.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-flight',
@@ -10,8 +12,11 @@ import { Seat } from '../../interfaces/flight-info.interface';
 export class FlightComponent {
 
   private flightService = inject(FlightService);
+  public router = inject (Router);
 
   flight = computed (()=>this.flightService.selectedFlight());
+
+  seatsflight = computed (()=>this.flightService.selectedFlight()?.seats?.sort((a,b)=>a.id-b.id));
 
   price = computed(()=> this.flight()!.basePrice * parseFloat(this.flight()!.priceType||'1') );
 
@@ -31,6 +36,29 @@ export class FlightComponent {
     }
     seat.state = 'reserved';
     this.seats.push(seat);
+  }
+
+  onPurchase(option:string){
+    if(this.seats.length===0){
+      alert('Debe seleccionar un asiento');
+      return;
+    }
+    const request: PurchaseRequest={
+      option,
+      flightCode: this.flight()?.code||'',
+      price: this.price(),
+      ticketType: 'basic',
+      email: 'jazapata@google.com',
+      seatCode: this.seats[0].code
+    }
+    this.flightService.purchase(request).subscribe({
+      next:()=>{
+        alert('Compra exitosa!');
+        this.router.navigateByUrl('/');
+      },
+      error:message=>alert(message)
+    })
+
   }
 
 }

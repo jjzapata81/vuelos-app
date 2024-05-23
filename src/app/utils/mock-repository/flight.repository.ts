@@ -56,6 +56,7 @@ export const priceDetail:PriceDetail = {
 export const searchFlightResults: FlightInfo[] = [
   {
     id:1,
+    code:'',
     isLowerPrice:true,
     duration: '0 h 55 min',
     basePrice: 90806.00,

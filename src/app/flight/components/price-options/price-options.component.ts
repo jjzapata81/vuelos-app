@@ -17,6 +17,7 @@ export class PriceOptionsComponent {
   @Input()
   flightInfo: FlightInfo = {
     id: 0,
+    code:'',
     isLowerPrice: false,
     duration: '',
     basePrice: 0,

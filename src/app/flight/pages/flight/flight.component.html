@@ -17,13 +17,19 @@
       </div>
     </div>
 </div>
-<div>
+
+<div class="seats">
   <div class="plain-container">
-    @for (item of flight()!.seats; track $index) {
+    @for (item of seatsflight(); track $index) {
       <div class="seat" [class]="item.state==='available' ? '':'not-available'" (click)="onSelectSeat(item)">
         <span>{{item.code}}</span>
         <div></div>
       </div>
     }
+  </div>
+  <div class="controls">
+    <button class="primary" (click)="onPurchase('buy')">Comprar</button>
+    <button class="secondary" (click)="onPurchase('reserve')">Reservar</button>
+    <button class="cancel" (click)="router.navigateByUrl('/')">Cancelar</button>
   </div>
 </div>

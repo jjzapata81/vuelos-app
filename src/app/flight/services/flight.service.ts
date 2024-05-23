@@ -6,6 +6,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { Observable, catchError, map, of, tap, throwError } from 'rxjs';
 import moment from 'moment';
+import { PurchaseRequest } from '../interfaces/purchase-request.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -26,12 +27,19 @@ export class FlightService {
       map(data=>data.map(this.mapper)),
       catchError(error=> throwError(()=>new Error(error.error.message||'Something was wrong!')))
     );
-
-
-
     /*let results: FlightInfo[] = this.getAllResults();
     console.log('En el servicio', searchCriteria)
     return of(results.filter( flight=> flight.from.location === searchCriteria.from && flight.to.location === searchCriteria.to));*/
+  }
+
+  purchase(request:PurchaseRequest){
+    const {option, flightCode, ...req} = request;
+    const url = `${environment.baseUrl}/flights/${option}/${flightCode}`;
+    return this.http.put(url, req).pipe(
+      map(()=>true),
+      catchError(err =>throwError(()=>new Error(err.error.message||'Something was wrong!')))
+    )
+
   }
 
   private mapper(response:FlightResponse):FlightInfo{
@@ -44,6 +52,7 @@ export class FlightService {
     const priceOptions = priceDetail.priceOptions.map(price=> {return { ...price, flightid:response.id, price:response.priceBase*price.rate!   };});
     return {
       id:response.id,
+      code:response.code,
       isLowerPrice:response.priceBase<100000,
       duration,
       basePrice: response.priceBase,

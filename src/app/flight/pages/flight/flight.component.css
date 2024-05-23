@@ -101,3 +101,55 @@
   color: #1b0088;
   font-size: 20px;
 }
+
+
+button{
+  padding:10px;
+  color:#fff;
+  border-style: solid;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px auto;
+}
+
+.primary:hover{
+  background:#0e736e;
+  border-color:#0e736e;
+}
+
+.primary{
+  background: #11837c;
+  border-color:#11837c;
+}
+
+.secondary:hover{
+  background:#10004f;
+  border-color:#10004f;
+}
+
+.secondary{
+  background: #10004f;
+  border-color:#10004f;
+}
+
+.cancel:hover{
+  background:#c51162;
+  border-color:#c51162;
+}
+
+.cancel{
+  background: #e8114b;
+  border-color:#e8114b;
+}
+
+.controls{
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+}
+.seats{
+  margin: 10px auto;
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+}

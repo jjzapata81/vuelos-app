@@ -3,6 +3,7 @@ import { PriceDetail } from "./price-detail.interfaces"
 
 export interface FlightInfo{
   id:number,
+  code:string;
   isLowerPrice:boolean,
   duration:string,
   basePrice:number,
@@ -36,6 +37,7 @@ export interface Ticket{
 
 export interface FlightResponse{
   id:number;
+  code:string;
   priceBase:number;
   arriveDate:string;
   arriveTime:string;
