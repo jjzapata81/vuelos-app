@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SearchComponent } from './flight/pages/search/search.component';
 import { LoginComponent } from './login/components/login.component';
-import { isAuthenticatedGuard } from './login/guards/is-authenticated.guard';
 
 const routes: Routes = [
   {
@@ -15,7 +14,6 @@ const routes: Routes = [
   },
   {
     path:'help',
-    canActivate:[isAuthenticatedGuard],
     loadChildren: () => import('./help-center/help.module').then(m => m.HelpModule)
   },
   {

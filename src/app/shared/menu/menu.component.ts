@@ -1,6 +1,5 @@
 import { Component, computed, inject } from '@angular/core';
 import { Menu } from '../interfaces/menu.interface';
-import { AuthService } from '../../login/services/auth.service';
 
 @Component({
   selector: 'app-menu',
@@ -9,10 +8,6 @@ import { AuthService } from '../../login/services/auth.service';
 })
 export class MenuComponent {
 
-
-  private authService = inject(AuthService);
-
-  user = computed (()=>this.authService.currentUser());
 
   menuItems: Menu[] = [
     { name:'Logo (inicio)', url: '/' },
