@@ -1,0 +1,25 @@
+<div class="pqr-container">
+  <div class="pqr-title">¿Cómo podemos ayudarte?</div>
+  <div class="pqr-body">
+    <div class="pqr-description">
+      Indicanos tu nombre, describe el problema y adjunta una
+      imagen como evidencia de la situación.
+    </div>
+    <div class="pqr-form">
+      <form [formGroup]="pqrForm" >
+        <label for="username">Nombre:</label>
+        <input type="text"
+          id="username" formControlName="username"
+          placeholder="Ingresa tu nombre"/>
+        <textarea  rows="4" cols="50"
+          formControlName="comment"
+          placeholder="Explica la situación">
+        </textarea>
+        <input type="file" name="file" id="file"
+          formControlName="fileTo" (change)="onFileSelected($event)"
+          class="inputfile"/>
+        <label for="file">Seleccionar archivo...</label>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 .help-footer{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  color:#878787
 }
