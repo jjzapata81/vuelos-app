@@ -2,3 +2,47 @@ main{
   background: #e8e8e8;
   height: 100%;
 }
+/*
+.plain-container{
+  display: flex;
+  background: #fff;
+  width: 350px;
+  margin: 20px auto;
+  padding: 10rem 15px 5rem;
+  border-radius: 12rem 12rem 6rem 6rem;
+  border: 2px solid #d8d8d8;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  position: relative;
+}
+
+.seat{
+  background: #10004f;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px 10px 5px 5px;
+  margin:5px;
+  cursor: pointer;
+  text-align: center;
+  justify-content: space-between;
+  box-shadow: rgba(16, 0, 79, 0.16) 0px 8px 16px 0px;
+  position: relative;
+}
+
+.seat>div{
+  background: #10004f;
+  height: 10px;
+  width: 58px;
+  position: absolute;
+  bottom: 0%;
+  border-radius: 20px 20px 5px 5px;
+  border: 2px solid #fff;
+}
+
+.not-available, .not-available>div{
+  cursor:not-allowed;
+  background: gray;
+}
+
+*/

@@ -1,25 +1,9 @@
 import { FlightInfo } from "../../flight/interfaces/flight-info.interface";
+import { PriceDetail } from "../../flight/interfaces/price-detail.interfaces";
 
-export const searchFlightResults: FlightInfo[] = [
-  {
-    id:'1',
-    isLowerPrice:true,
-    duration: '0 h 55 min',
-    basePrice: 90806.00,
-    from: {
-      time: '2:50 pm',
-      location: 'medellin'
-    },
-    to:{
-      time:'3:45 pm',
-      location: 'bogota'
-    },
-    route:{
-      name:'Directo',
-      detail:'#'
-    },
-    priceDetail:{
-      plainType: 'Airbus A320',
+
+export const priceDetail:PriceDetail = {
+  plainType: 'Airbus A320',
       priceOptions: [
         {
           name: 'Basic',
@@ -61,6 +45,28 @@ export const searchFlightResults: FlightInfo[] = [
         }
 
       ]
-    }
+};
+
+export const searchFlightResults: FlightInfo[] = [
+  {
+    id:1,
+    isLowerPrice:true,
+    duration: '0 h 55 min',
+    basePrice: 90806.00,
+    from: {
+      time: '2:50 pm',
+      location: 'medellin'
+    },
+    to:{
+      time:'3:45 pm',
+      location: 'bogota'
+    },
+    route:{
+      name:'Directo',
+      detail:'#'
+    },
+    priceDetail
   }
 ];
+
+

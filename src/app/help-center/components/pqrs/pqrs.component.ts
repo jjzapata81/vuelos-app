@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { SupabaseService } from '../../services/supabase.service';
 
 @Component({
   selector: 'help-pqrs',
@@ -15,7 +16,8 @@ export class PqrsComponent {
     fileTo : ['']
   })
 
-  constructor(private fb:FormBuilder
+  constructor(private fb:FormBuilder,
+    private supabaseService: SupabaseService
   ){}
 
 
@@ -27,12 +29,10 @@ export class PqrsComponent {
     }
     const folderName = this.pqrForm.controls.username.value?.toLowerCase().replace(' ', '_');
     const file:File = event.target.files[0];
-    console.log(file);
-    this.pqrForm.reset();
-    /*this.supabaseService.upload(file, folderName).then(data=>{
+    this.supabaseService.upload(file, folderName).then(data=>{
       console.log(data);
       this.pqrForm.reset();
-    });*/
+    });
   }
 
 }

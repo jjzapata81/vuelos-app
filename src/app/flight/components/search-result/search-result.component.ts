@@ -8,12 +8,12 @@ import { FlightInfo } from '../../interfaces/flight-info.interface';
 })
 export class SearchResultComponent {
 
-  selected:string = '';
+  selected:number = 0;
 
   @Input()
   searchResults: FlightInfo[] = [];
 
-  onPriceOptions(option: string):void{
+  onPriceOptions(option: number):void{
     console.log(option);
     this.selected = option;
   }

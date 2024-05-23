@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { SearchCriteria } from '../../interfaces/search-criteria.interface';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'search-box',
@@ -25,19 +25,10 @@ export class SearchBoxComponent {
     to: ''
   }
 
-  /*searchForm = new FormGroup({
-    roundType : new FormControl('', [], []),
-    type : new FormControl('', [], []),
-    passengersNumber : new FormControl(0, [], []),
-    from : new FormControl('', [], []),
-    to : new FormControl('', [], []),
-  })*/
-
-
   searchForm = this.fb.group({
     roundType : [this.ROUND_TRIP, [], []],
     type : [this.TRIP_TYPE, [], []],
-    passengersNumber : [0, [Validators.required, Validators.min(1)], []],
+    passengersNumber : [1, [Validators.required, Validators.min(1)], []],
     from : ['', [Validators.required], []],
     to : ['', [Validators.required], []],
     travelDate:[new Date()],
@@ -48,13 +39,7 @@ export class SearchBoxComponent {
     this.onRoundType();
   }
 
-  onSearch(){
-    console.log('Busqueda:',this.searchCriteria);
-    this.searchEmmiter.emit(this.searchCriteria);
-  }
-
   onRoundType(){
-    //this.isRoundTrip = this.ROUND_TRIP === this.searchCriteria.roundType;
     this.isRoundTrip = this.ROUND_TRIP === this.searchForm.controls.roundType.value;
   }
 
@@ -64,14 +49,9 @@ export class SearchBoxComponent {
       this.searchForm.markAllAsTouched();
       return;
     }
-    console.log(this.searchForm.value);
-    //this.searchEmmiter.emit(this.searchForm.value);
-
-
     let valor:SearchCriteria = JSON.parse(JSON.stringify(this.searchForm.value));
-    console.log('lo que se envia ',valor);
     this.searchEmmiter.emit(valor);
-    this.searchForm.reset({roundType:this.ROUND_TRIP, type:this.TRIP_TYPE});
+    this.searchForm.reset({roundType:this.ROUND_TRIP, type:this.TRIP_TYPE, passengersNumber:1});
   }
 
 }

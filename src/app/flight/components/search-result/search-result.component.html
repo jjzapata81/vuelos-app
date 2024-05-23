@@ -16,7 +16,7 @@
         <div>Adulto desde</div>
         <div class="price">{{ item.basePrice | currency : 'COP '}}</div>
       </div>
-      <div class="flight-price close-price-options" (click)="onPriceOptions('')" *ngIf="selected===item.id">
+      <div class="flight-price close-price-options" (click)="onPriceOptions(0)" *ngIf="selected===item.id">
         Cerrar
       </div>
     </div>
