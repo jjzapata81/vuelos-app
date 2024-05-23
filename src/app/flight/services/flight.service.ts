@@ -16,19 +16,19 @@ export class FlightService {
   constructor(private http:HttpClient) { }
 
   getResults(searchCriteria:SearchCriteria):Observable<FlightInfo[]>{
-    /*const { from, to } = searchCriteria;
+    const { from, to } = searchCriteria;
     const params = {from, to};
     const url = `${environment.baseUrl}/flights/find`
     return this.http.get<FlightResponse[]>(url, {params} ).pipe(
       map(data=>data.map(this.mapper)),
       catchError(error=> throwError(()=>new Error(error.error.message)))
-    );*/
+    );
 
 
 
-    let results: FlightInfo[] = this.getAllResults();
+    /*let results: FlightInfo[] = this.getAllResults();
     console.log('En el servicio', searchCriteria)
-    return of(results.filter( flight=> flight.from.location === searchCriteria.from && flight.to.location === searchCriteria.to));
+    return of(results.filter( flight=> flight.from.location === searchCriteria.from && flight.to.location === searchCriteria.to));*/
   }
 
   private mapper(response:FlightResponse):FlightInfo{
