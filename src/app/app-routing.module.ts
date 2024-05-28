@@ -4,6 +4,7 @@ import { SearchComponent } from './flight/pages/search/search.component';
 import { LoginComponent } from './login/components/login.component';
 import { FlightComponent } from './flight/pages/flight/flight.component';
 import { isFlightGuard } from './login/guards/is-flight.guard';
+import { isActiveGuard } from './login/guards/is-active.guard';
 
 const routes: Routes = [
   {
@@ -16,11 +17,12 @@ const routes: Routes = [
   },
   {
     path:'flight',
-    canActivate: [isFlightGuard],
+    canActivate: [isActiveGuard,isFlightGuard],
     component:FlightComponent
   },
   {
     path:'help',
+    canActivate:[isActiveGuard],
     loadChildren: () => import('./help-center/help.module').then(m => m.HelpModule)
   },
   {

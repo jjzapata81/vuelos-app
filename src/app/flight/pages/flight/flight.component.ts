@@ -3,6 +3,7 @@ import { FlightService } from '../../services/flight.service';
 import { Seat } from '../../interfaces/flight-info.interface';
 import { PurchaseRequest } from '../../interfaces/purchase-request.interface';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../login/services/auth.service';
 
 @Component({
   selector: 'app-flight',
@@ -12,6 +13,7 @@ import { Router } from '@angular/router';
 export class FlightComponent {
 
   private flightService = inject(FlightService);
+  private authService = inject(AuthService);
   public router = inject (Router);
 
   flight = computed (()=>this.flightService.selectedFlight());
@@ -48,7 +50,7 @@ export class FlightComponent {
       flightCode: this.flight()?.code||'',
       price: this.price(),
       ticketType: 'basic',
-      email: 'jazapata@google.com',
+      email: this.authService.currentUser()?.user.email||'',
       seatCode: this.seats[0].code
     }
     this.flightService.purchase(request).subscribe({

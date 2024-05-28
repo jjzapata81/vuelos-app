@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -18,6 +20,7 @@ export class LoginComponent {
 
   constructor(private fb:FormBuilder,
     private authService:AuthService,
+    private router: Router
    ){
 
   }
@@ -30,9 +33,18 @@ export class LoginComponent {
     const { email, password } = this.loginForm.value;
 
     this.authService.login(email || '', password ||'').subscribe({
-      next:()=> console.log('Todo bien'),
+      next:()=> {
+        const url = localStorage.getItem('urlRedirect');
+        console.log({url});
+        if(url){
+            localStorage.removeItem('urlRedirect');
+            this.router.navigateByUrl(url);
+        }else{
+          this.router.navigateByUrl('/');
+        }
+      },
       error:(message)=>{
-        alert(message);
+        Swal.fire(message);
       }
     });
 
